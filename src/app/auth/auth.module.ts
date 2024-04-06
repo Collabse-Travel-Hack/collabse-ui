@@ -16,7 +16,7 @@ import {
   TuiSelectModule,
 } from '@taiga-ui/kit';
 
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages';
 
 
 const BASE_MODULES = [

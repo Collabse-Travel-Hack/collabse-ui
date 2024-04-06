@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
-import { AdminComponent } from './admin/admin.component';
-import { PartnerComponent } from './partner/partner.component';
-import { UserComponent } from './user/user.component';
+import {
+  AdminComponent,
+  PartnerComponent,
+  UserComponent,
+} from './pages';
 
 
 const routes: Routes = [
