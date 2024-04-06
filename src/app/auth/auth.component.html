@@ -1,0 +1,22 @@
+<div class="container">
+  <tui-select
+    [formControl]="roleControl"
+    [tuiTextfieldLabelOutside]="true"
+    [valueContent]="roleSelectLabel"
+  >
+    Роль
+    <input tuiTextfield />
+
+    <ng-template #roleSelectLabel let-role>
+      {{ role.title }}
+    </ng-template>
+
+    <ng-template tuiDataList>
+      <tui-data-list>
+        <button *ngFor="let role of roles" tuiOption [value]="role">
+          {{ role.title }}
+        </button>
+      </tui-data-list>
+    </ng-template>
+  </tui-select>
+</div>
