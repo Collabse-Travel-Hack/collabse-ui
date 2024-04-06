@@ -21,7 +21,6 @@ import { LoginComponent } from './login/login.component';
 
 const BASE_MODULES = [
   CommonModule,
-  RouterModule,
   FormsModule,
   ReactiveFormsModule,
 ];
@@ -44,7 +43,7 @@ const routes: Routes = [
   imports: [
     ...BASE_MODULES,
     ...TAIGA_MODULES,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
   declarations: [
     LoginComponent,

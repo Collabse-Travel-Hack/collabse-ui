@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.roleControl.valueChanges.subscribe((value: any) => {
       const role = value.code as UserRole;
-      this.router.navigate([`/${role}`]);
+      this.router.navigate([`/app/${role}`]);
     });
   }
 }

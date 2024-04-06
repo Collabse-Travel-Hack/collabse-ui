@@ -1,10 +1,5 @@
 import { Routes } from '@angular/router';
 
-// roles
-import { AdminComponent } from './admin/admin.component';
-import { PartnerComponent } from './partner/partner.component';
-import { UserComponent } from './user/user.component';
-
 
 export const routes: Routes = [
   // auth
@@ -13,10 +8,11 @@ export const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
 
-  // roles
-  { path: 'admin', component: AdminComponent },
-  { path: 'partner', component: PartnerComponent },
-  { path: 'user', component: UserComponent },
+  // main
+  {
+    path: 'app',
+    loadChildren: () => import('./main/main.module').then(m => m.MainModule)
+  },
 
   // ...
   { path: '**', redirectTo: 'auth' },
