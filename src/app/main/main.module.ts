@@ -15,11 +15,8 @@ import {
 
 
 import {
-  AdminComponent,
   CatalogComponent,
   DashboardComponent,
-  PartnerComponent,
-  UserComponent,
 } from './pages';
 
 import {
@@ -41,12 +38,6 @@ const TAIGA_MODULES = [
 ];
 
 const routes: Routes = [
-  // roles
-  { path: 'admin', component: AdminComponent },
-  { path: 'partner', component: PartnerComponent },
-  { path: 'user', component: UserComponent },
-
-  // features
   { path: 'dashboard', component: DashboardComponent },
   { path: 'catalog', component: CatalogComponent },
 ];
