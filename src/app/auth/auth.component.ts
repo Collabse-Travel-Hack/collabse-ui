@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 import {
   TuiButtonModule,
@@ -17,6 +17,7 @@ import {
 
 const BASE_MODULES = [
   CommonModule,
+  RouterModule,
   FormsModule,
   ReactiveFormsModule,
 ];
@@ -57,8 +58,20 @@ export const ROLES_LIST: ListOption<UserRole>[] = [
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.less'
 })
-export class AuthComponent {
+export class AuthComponent implements OnInit {
   public roles: ListOption<UserRole>[] = ROLES_LIST;
 
   public roleControl = new FormControl<ListOption<UserRole> | null>(null);
+
+  constructor(
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.roleControl.valueChanges.subscribe((value: any) => {
+      const role = value.code as UserRole;
+      console.log('role =>', role);
+      this.router.navigate([`/${role}`]);
+    });
+  }
 }
