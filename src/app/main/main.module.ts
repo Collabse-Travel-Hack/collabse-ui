@@ -18,6 +18,10 @@ import {
   UserComponent,
 } from './pages';
 
+import {
+  PreviewCardComponent,
+} from './components';
+
 
 const TAIGA_MODULES = [
   TuiInputModule,
@@ -42,9 +46,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
   declarations: [
-    AdminComponent,
-    PartnerComponent,
-    UserComponent,
+    DashboardComponent,
+    PreviewCardComponent,
   ]
 })
 export class MainModule { }

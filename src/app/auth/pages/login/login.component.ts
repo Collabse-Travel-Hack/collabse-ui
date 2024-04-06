@@ -8,16 +8,23 @@ interface ListOption<T = string> {
   title: string;
 }
 
-export enum UserRole {
+enum UserRole {
   ADMIN = 'admin',
   USER = 'user',
   PARTNER = 'partner',
 }
-export const ROLES_LIST: ListOption<UserRole>[] = [
+
+const ROLES_LIST: ListOption<UserRole>[] = [
   { code: UserRole.ADMIN,   title: 'Админ' },
   { code: UserRole.PARTNER, title: 'Партнер' },
   { code: UserRole.USER,    title: 'Пользователь' },
 ];
+
+const ROLE_TO_PAGE: Record<UserRole, string> = {
+  [UserRole.ADMIN]: 'dashboard',
+  [UserRole.PARTNER]: 'dashboard',
+  [UserRole.USER]: '',
+}
 
 @Component({
   selector: 'app-login',
@@ -35,8 +42,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.roleControl.valueChanges.subscribe((value: any) => {
-      const role = value.code as UserRole;
-      this.router.navigate([`/app/${role}`]);
+      const role: UserRole = value.code as UserRole;
+      const path = `/app/${ROLE_TO_PAGE[role]}`;
+      this.router.navigate([path]);
     });
   }
 }
