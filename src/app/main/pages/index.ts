@@ -5,3 +5,5 @@ export { UserComponent } from './user/user.component';
 
 // features
 export { DashboardComponent } from './dashboard/dashboard.component';
+export { CatalogComponent } from './catalog/catalog.component';
+

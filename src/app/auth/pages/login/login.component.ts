@@ -23,7 +23,7 @@ const ROLES_LIST: ListOption<UserRole>[] = [
 const ROLE_TO_PAGE: Record<UserRole, string> = {
   [UserRole.ADMIN]: 'dashboard',
   [UserRole.PARTNER]: 'dashboard',
-  [UserRole.USER]: '',
+  [UserRole.USER]: 'catalog',
 }
 
 @Component({
