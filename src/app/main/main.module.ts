@@ -13,7 +13,7 @@ import {
 const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'partner', component: PartnerComponent },
-  { path: 'component', component: UserComponent },
+  { path: 'user', component: UserComponent },
 ];
 
 @NgModule({
