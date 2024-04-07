@@ -4,8 +4,6 @@ import { FormControl } from '@angular/forms';
 import { ElasticApiService } from '@api/services';
 import { PlaceDto } from '@api/models';
 
-import { MOCK_RECORDS } from './mocks';
-
 
 @Component({
   selector: 'app-catalog',
