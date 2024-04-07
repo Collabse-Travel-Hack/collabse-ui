@@ -11,8 +11,10 @@ import { PlaceDto } from '@api/models';
   styleUrl: './catalog.component.less'
 })
 export class CatalogComponent implements OnInit {
-  searchControl = new FormControl();
+  allPlaces: PlaceDto[] = [];
   placesList: PlaceDto[] = [];
+
+  searchControl = new FormControl();
 
   constructor(
     private elasticApi: ElasticApiService,
@@ -20,7 +22,18 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit(): void {
     this.elasticApi.getPlacesList().subscribe(res => {
+      this.allPlaces = res.records;
       this.placesList = res.records;
+    });
+  }
+
+  handleSearch(): void {
+    this.placesList = this.allPlaces.filter((place: PlaceDto) => {
+      const query = this.searchControl.value;
+      const isTitle = place.title.includes(query);
+      const isDescription = place.description.includes(query);
+      const isAddress = place.address.includes(query);
+      return isTitle || isDescription || isAddress;
     });
   }
 }

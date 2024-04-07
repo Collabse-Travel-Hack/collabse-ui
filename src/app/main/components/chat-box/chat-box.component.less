@@ -1,3 +1,5 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.less';
+
 .message-list {
   padding: 0 3rem;
   display: flex;
@@ -14,17 +16,24 @@
 
   &__left {
     justify-content: flex-start;
+    .message-text {
+      background-color: var(--tui-success-bg);
+    }
   }
 
   &__right {
     justify-content: flex-end;
+    .message-text {
+      background-color: var(--tui-info-bg)
+    }
   }
 }
 
 .message-text {
-  border: 1px solid;
+  .shadow(4);
+  border: 1px solid lightgray;
   border-radius: 1rem;
-  width: 50%;
+  width: 45%;
   padding: 1rem;
 }
 

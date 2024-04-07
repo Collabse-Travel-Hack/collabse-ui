@@ -5,8 +5,8 @@
         <div
           class="message-card"
           [ngClass]="{
-            'message-card__left': message.from == 'user',
-            'message-card__right': message.from == 'bot',
+            'message-card__left': message.from == 'bot',
+            'message-card__right': message.from == 'user',
           }"
         >
           <div class="message-text">

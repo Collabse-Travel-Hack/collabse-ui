@@ -1,6 +1,7 @@
 <div class="container">
   <!-- SEARCH FORM -->
   <div class="search-form">
+    <form action=""></form>
     <tui-input
       class="search-form__input"
       [formControl]="searchControl"
@@ -14,9 +15,26 @@
       tuiIconButton
       type="button"
       icon="tuiIconSearch"
+      (click)="handleSearch()"
     ></button>
   </div>
 
+  <!-- PAGE LINK -->
+  <div class="control-panel">
+    <p class="search-stat">
+      найдено вариантов: {{placesList.length}}
+    </p>
+
+    <a
+      class="page-link"
+      routerLink="/app/search"
+      tuiLink
+    >
+      Открыть умный поиск
+    </a>
+  </div>
+
+  <!-- DATA LIST -->
   <div class="catalog-list">
     <ng-container *ngFor="let place of placesList">
       <app-preview-card class="info-block" [title]="place.title">

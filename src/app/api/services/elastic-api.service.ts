@@ -14,7 +14,7 @@ export class ElasticApiService {
   public getPlacesList(): Observable<any> {
     return this.apiService.get('places', {
       'offset': 0,
-      'size': 20,
+      'size': 100,
     });
   }
 }
