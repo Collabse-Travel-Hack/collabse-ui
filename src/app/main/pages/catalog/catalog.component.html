@@ -18,11 +18,11 @@
   </div>
 
   <div class="catalog-list">
-    <ng-container *ngFor="let record of recordsList">
-      <app-preview-card class="info-block" [title]="record.title">
+    <ng-container *ngFor="let place of placesList">
+      <app-preview-card class="info-block" [title]="place.title">
         <tui-scrollbar class="info-block__content">
           <p class="info-block__text">
-            {{record.description}}
+            {{place.description}}
           </p>
         </tui-scrollbar>
       </app-preview-card>
