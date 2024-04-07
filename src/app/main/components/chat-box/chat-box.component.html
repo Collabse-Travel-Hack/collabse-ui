@@ -9,9 +9,10 @@
             'message-card__right': message.from == 'user',
           }"
         >
-          <div class="message-text">
-            {{ message.text }}
-          </div>
+          <div
+            class="message-text"
+            [innerHTML]="message.text"
+          ></div>
         </div>
       </ng-container>
     </tui-scrollbar>
