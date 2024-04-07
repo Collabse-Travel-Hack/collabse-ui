@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="message-list">
+    <tui-scrollbar>
+      <ng-container *ngFor="let message of conversation">
+        <div
+          class="message-card"
+          [ngClass]="{
+            'message-card__left': message.from == 'user',
+            'message-card__right': message.from == 'bot',
+          }"
+        >
+          <div class="message-text">
+            {{ message.text }}
+          </div>
+        </div>
+      </ng-container>
+    </tui-scrollbar>
+  </div>
+
+  <div class="text-form">
+    <tui-input
+      class="text-form__input"
+      [formControl]="textControl"
+    >
+      Введите сообщение
+      <input tuiTextfield/>
+    </tui-input>
+
+    <button
+      class="text-form__button"
+      tuiButton
+      appearance="custom"
+      size="m"
+      (click)="sendMessage()"
+    >
+      Отправить
+    </button>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.message-list {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  min-height:  50vh;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.message-card {
+  width: 100%;
+  display: flex;
+  margin: 1rem 0;
+
+  &__left {
+    justify-content: flex-start;
+  }
+
+  &__right {
+    justify-content: flex-end;
+  }
+}
+
+.message-text {
+  border: 1px solid;
+  border-radius: 1rem;
+  width: 50%;
+  padding: 1rem;
+}
+
+.text-form {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+
+  &__input {
+    width: 100%;
+  }
+
+  &__button {
+    margin-left: 2rem;
+  }
+}

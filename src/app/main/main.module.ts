@@ -16,9 +16,11 @@ import {
 import {
   CatalogComponent,
   DashboardComponent,
+  SearchComponent,
 } from './pages';
 
 import {
+  ChatBoxComponent,
   PreviewCardComponent,
 } from './components';
 
@@ -39,15 +41,18 @@ const TAIGA_MODULES = [
 const PAGES = [
   DashboardComponent,
   CatalogComponent,
+  SearchComponent,
 ];
 
 const COMPONENTS = [
   PreviewCardComponent,
+  ChatBoxComponent,
 ]
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'catalog', component: CatalogComponent },
+  { path: 'search', component: SearchComponent },
 ];
 
 @NgModule({
