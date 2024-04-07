@@ -1,17 +1,17 @@
 export interface PlaceDto {
   // meta
   id: string;
+  type: any;
 
   // common
   title: string;
-  type: string;
   description: string;
   address: string;
 
   // info
   price: number;
-  rating: number;
-  popularity: number;
+  rating: any;
+  popularity: any;
 
   // extra
   object_type: string;

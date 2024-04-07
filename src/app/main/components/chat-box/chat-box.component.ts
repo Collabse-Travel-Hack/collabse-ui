@@ -13,8 +13,6 @@ export class ChatBoxComponent {
 
   textControl = new FormControl();
 
-  currentUserId = 1;
-
   sendMessage() {
     this.enter.emit(this.textControl.value);
     this.textControl.setValue('');
