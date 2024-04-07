@@ -1,0 +1,31 @@
+<div class="container">
+  <!-- SEARCH FORM -->
+  <div class="search-form">
+    <tui-input
+      class="search-form__input"
+      [formControl]="searchControl"
+    >
+      Введите запрос
+      <input tuiTextfield/>
+    </tui-input>
+
+    <button
+      class="search-form__button"
+      tuiIconButton
+      type="button"
+      icon="tuiIconSearch"
+    ></button>
+  </div>
+
+  <div class="catalog-list">
+    <ng-container *ngFor="let place of placesList">
+      <app-preview-card class="info-block" [title]="place.title">
+        <tui-scrollbar class="info-block__content">
+          <p class="info-block__text">
+            {{place.description}}
+          </p>
+        </tui-scrollbar>
+      </app-preview-card>
+    </ng-container>
+  </div>
+</div>
