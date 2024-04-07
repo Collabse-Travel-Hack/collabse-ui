@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { CONVERSATION } from './mocks';
+
 
 @Component({
   selector: 'app-chat-box',
@@ -8,18 +8,15 @@ import { CONVERSATION } from './mocks';
   styleUrl: './chat-box.component.less'
 })
 export class ChatBoxComponent {
+  @Input() messages: any[] = [];
+  @Output() enter = new EventEmitter();
+
   textControl = new FormControl();
 
   currentUserId = 1;
-  conversation: any[] = CONVERSATION;
 
   sendMessage() {
-    this.conversation.push({
-      text: this.textControl.value,
-      date: new Date(),
-      from: 'user',
-    });
-
+    this.enter.emit(this.textControl.value);
     this.textControl.setValue('');
   }
 }

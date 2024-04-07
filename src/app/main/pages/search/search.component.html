@@ -1,3 +1,6 @@
 <div class="container">
-  <app-chat-box></app-chat-box>
+  <app-chat-box
+    [messages]="messages"
+    (enter)="handleEnter($event)"
+  ></app-chat-box>
 </div>
