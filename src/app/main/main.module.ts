@@ -36,6 +36,15 @@ const TAIGA_MODULES = [
   TuiScrollbarModule,
 ];
 
+const PAGES = [
+  DashboardComponent,
+  CatalogComponent,
+];
+
+const COMPONENTS = [
+  PreviewCardComponent,
+]
+
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'catalog', component: CatalogComponent },
@@ -48,9 +57,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
   declarations: [
-    DashboardComponent,
-    CatalogComponent,
-    PreviewCardComponent,
-  ]
+    ...PAGES,
+    ...COMPONENTS,
+  ],
 })
 export class MainModule { }
