@@ -13,7 +13,6 @@ import {
   TuiScrollbarModule,
 } from '@taiga-ui/core';
 
-
 import {
   CatalogComponent,
   DashboardComponent,
@@ -22,7 +21,6 @@ import {
 import {
   PreviewCardComponent,
 } from './components';
-// import { HttpClientModule } from '@angular/common/http';
 
 
 const BASE_MODULES = [
@@ -47,7 +45,6 @@ const routes: Routes = [
   imports: [
     ...BASE_MODULES,
     ...TAIGA_MODULES,
-    // HttpClientModule,
     RouterModule.forChild(routes),
   ],
   declarations: [

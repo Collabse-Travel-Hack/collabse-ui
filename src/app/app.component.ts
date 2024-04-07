@@ -2,7 +2,6 @@ import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
 import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER } from '@taiga-ui/core';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-// import { HttpClientModule } from '@angular/common/http';
 
 import { LayoutsModule } from './layouts/layouts.module';
 
@@ -18,7 +17,6 @@ const TAIGA_MODULES = [
   standalone: true,
   imports: [
     RouterOutlet,
-    // HttpClientModule,
     LayoutsModule,
     ...TAIGA_MODULES,
   ],
